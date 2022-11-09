@@ -1,0 +1,93 @@
+(defwidget bar []
+	(box :class "eww_bar" 
+		 :orientation "v" 
+		 :vexpand "false" 
+		 :hexpand "false"
+(top)
+(end)))
+
+(defwidget volum []
+	(eventbox :onhover "eww -c ~/.config/bspwm/eww/bar/ update volum=true" 		
+			  :onhoverlost "eww -c ~/.config/bspwm/eww/bar/ update volum=false"
+	(box      :orientation "v" 	  
+			  :space-evenly "false" 
+			  :spacing "2"
+	(revealer :transition "slideup" 
+			  :reveal volum         
+			  :duration "550ms"
+	(scale    :class "volbar" 	  
+			  :value current-volume 
+			  :orientation "v"      
+			  :flipped true 
+			  :tooltip "Volume: ${current-volume}%" 
+			  :max 101 
+			  :min 0 
+			  :onchange "amixer -D pulse sset Master {}%" ))
+	(button   :onclick "~/.config/bspwm/eww/bar/scripts/launchVol" :class "volume-icon" " "))))
+(defpoll current-volume :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+(defvar volum false)
+
+(defwidget workspaces []
+	(literal :content workspace))
+(deflisten workspace "scripts/workspaces")
+
+(defwidget checkupdates []
+  (button :onclick "~/.config/bspwm/eww/bar/scripts/launchUpdates"
+  (label :class "checkupdates" :orientation "v" :text "
+ ${checkupdates} 
+PKG"
+  (literal :class "checkupdates" :content checkupdates))))
+(deflisten checkupdates "scripts/checkupdates")
+
+(defwidget launcher []
+  (button :onclick "~/.config/bspwm/eww/bar/scripts/launchMenu"
+  (label :class "launcher" :orientation "v" :text " "
+  )))
+
+(defwidget time []
+	(box	:orientation "v" 
+			:class "time" 
+			:valign "end"
+  (button :onclick "scripts/popup"
+      :class "time-day" day)
+	(button	:onclick "scripts/popup"	
+			:class "time-hour" hour)
+	(button	:onclick "scripts/popup"	
+			:class "time-min"  min)))
+(defpoll day :interval "1s" "date '+%a'")
+(defpoll hour	:interval "1s"	"date '+%I'")
+(defpoll min	:interval "1s"	"date '+%M'")
+
+(defwidget top []
+  (box :orientation "v" 
+       :space-evenly "false" 
+       :valign "start"
+    (launcher)
+    (workspaces)))
+
+(defwidget bottom []
+	(box	:orientation "v" 
+			:space-evenly false 
+(volum)
+(checkupdates)
+(time)))
+
+(defwidget end []
+	(box :orientation "v" 
+		 :space-evenly "false" 
+		 :valign "end" 
+		 :spacing 5
+(bottom)))
+
+(defwindow bar
+	:geometry (geometry :x "5px" 
+						:y "5px" 
+						:height "99%" 
+						:width "50px")
+	:monitor 0
+	:reserve (struts :distance "35px" 
+					 :side "left")
+	:wm-ignore false
+	:hexpand "false"
+	:vexpand "false"
+(bar))

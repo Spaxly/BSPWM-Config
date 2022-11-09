@@ -1,0 +1,146 @@
+@import 'colors/mocha';
+
+* {
+  all: unset; //Unsets everything so you can style everything from scratch
+}
+
+//Global Styles
+.bar {
+  background-color: $crust;
+  color: $text;
+  padding: 10px;
+}
+
+.works {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 10px;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  background-color: $base;
+  border-radius: 5px;
+}
+
+.0 , .01, .02, .03, .04, .05,
+.011, .022, .033, .044, .055{
+  margin: .55rem 0 .55rem 0;
+  margin-left: -3.5px;
+}
+
+/* Unoccupied */
+.0 {
+  color: $surface0;
+}
+
+/* Occupied */
+.01, .02, .03, .04, .05 {
+  color: $blue;
+}
+
+/* Focused */
+.011,
+.022,
+.033,
+.044,
+.055 
+{
+  color: $text;
+}
+
+.0:nth-child(1),
+.0:nth-child(3){
+  font-size: 2em;
+}
+.0:nth-child(2){
+  font-size: 2em;
+}
+.0:nth-child(4),
+.0:nth-child(5){
+  font-size: 2em;
+}
+.0:nth-child(6){
+  font-size: 2em;
+}
+.01,
+.011,
+.03,
+.033{
+  font-size: 2em;
+}
+.02,
+.022{
+  font-size: 2em;
+}
+.04,
+.05,
+.044,
+.055{
+  font-size: 2em;
+}
+
+.volume-icon{
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 5px;
+  // padding-top: 10px;
+  // padding-left: 15px;
+  // padding-right: 15px;
+  // padding-bottom: 10px;
+  // background-color: $base;
+  // border-radius: 5px;
+  color: $green;
+}
+scale trough {
+  all: unset;
+  background-color: $base;
+  border-radius: 5px;
+  min-height: 80px;
+  min-width: 10px;
+  // margin: .3rem 0 .3rem 0;
+}
+.bribar trough highlight {
+  background-color: $yellow;
+  border-radius: 5px;
+}
+.volbar trough highlight {
+  background-color: $green;
+  border-radius: 5px;
+}
+
+.time {
+  font-family: VictorMono Nerd Font;
+  font-weight: bold;
+  font-size: 1.5em;
+  background-color: $base;
+  color: $mauve;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+}
+
+.checkupdates {
+  font-family: VictorMono Nerd Font;
+  font-weight: bold;
+  font-size: 1.5em;
+  background-color: $base;
+  color: $sky;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  border-radius: 5px;
+}
+
+.launcher {
+  font-family: VictorMono Nerd Font;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: $blue;
+  padding-top: 15px;
+  padding-left: 3.5px;
+}

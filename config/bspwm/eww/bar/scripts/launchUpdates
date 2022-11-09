@@ -1,0 +1,3 @@
+#!/bin/sh
+
+alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml -e 'yay'
