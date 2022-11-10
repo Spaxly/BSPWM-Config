@@ -14,7 +14,7 @@
     <image src="https://raw.githubusercontent.com/Spaxly/BSPWM-Config/main/assets/Desktop.png"></image>
     <h1>Horizontal Bottom Bar:</h1>
     <image src="https://raw.githubusercontent.com/Spaxly/BSPWM-Config/main/assets/BottomBar.png"></image>
-    <h1>Change From Global Themes & Modes:</h1>
+    <h1>Use Rofi To Change Modes & Global Themes In Seconds:</h1>
     <image src="https://raw.githubusercontent.com/Spaxly/BSPWM-Config/main/assets/UpdatedThemeSwitcher.png"></image>
 </details>
 
