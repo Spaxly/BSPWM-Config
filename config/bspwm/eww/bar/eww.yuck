@@ -31,13 +31,40 @@
 	(literal :content workspace))
 (deflisten workspace "scripts/workspaces")
 
+(defwidget outsideWeather []
+  (box :orientation "v"
+    :class "temp"
+    :halign "center"
+    :valign "end"
+    
+  (label :text "${temp}°F"
+    :class temp)
+    )
+  )
+
+(defpoll weather :interval "10s" "scripts/weather.sh")
+(defpoll temp :interval "10s" "cat ~/.cache/weather.json | jq '.main.temp' | awk '{print int($1+0.5)}'")
+
+; (defwidget checkupdates []
+  ; (button :onclick "~/.config/bspwm/eww/bar/scripts/launchUpdates"
+  ; (label :class "checkupdates" :orientation "v" :halign "center" :valign "end" :text "
+ ; ${checkupdates} 
+; PKG"
+  ; (literal :class "checkupdates" :content checkupdates))))
+; (deflisten checkupdates "scripts/checkupdates")
+
 (defwidget checkupdates []
+  (box 
+    :orientation "v"
+    :halign "center"
+    :valign "end"
   (button :onclick "~/.config/bspwm/eww/bar/scripts/launchUpdates"
-  (label :class "checkupdates" :orientation "v" :halign "center" :valign "end" :text "
- ${checkupdates} 
-PKG"
-  (literal :class "checkupdates" :content checkupdates))))
-(deflisten checkupdates "scripts/checkupdates")
+  (label :class "checkupdates" :text "
+   ${checkupdates}
+  PKG"
+    ))))
+
+(defpoll checkupdates :interval "1s" "scripts/checkupdates")
 
 (defwidget launcher []
   (button :onclick "~/.config/bspwm/eww/bar/scripts/launchMenu"
@@ -69,6 +96,7 @@ PKG"
 	(box	:orientation "v" 
 			:space-evenly false 
 (volum)
+(outsideWeather)
 (checkupdates)
 (time)))
 

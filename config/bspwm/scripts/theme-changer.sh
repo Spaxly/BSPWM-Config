@@ -70,7 +70,7 @@ case $choice in
     # ---BSPWM---
     bspc wm -r
     # ---BACKGROUND---
-    echo 'feh --bg-fill ~/.config/bspwm/wallpapers/cyberpunk_car_background.jpg' > ~/.fehbg
+    echo 'feh --bg-fill ~/.config/bspwm/wallpapers/beautiful-mountains.png' > ~/.fehbg
     ;;
   'Frappe')
     # ---POLYBAR---

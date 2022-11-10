@@ -4,7 +4,8 @@ pgrep -x sxhkd > /dev/null || sxhkd -c ~/.config/bspwm/sxhkdrc &
 
 xsetroot -cursor_name left_ptr &
 xinput --set-prop 'Glorious Model O' 'libinput Accel Profile Enabled' 0, 1 &
-picom --config ~/.config/bspwm/picom/picom.conf --experimental-backends &
+# picom --config ~/.config/bspwm/picom/picom.conf --experimental-backends &
+picom --config ~/.config/bspwm/picom/picom_alternate.conf &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 dunst -config ~/.config/bspwm/dunst/dunstrc &
 # ~/.config/bspwm/polybar/alternate_polybar/new_bar/launch.sh &

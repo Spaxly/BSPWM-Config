@@ -3,11 +3,13 @@ import:
 
 font:
   normal:
-    family: FantasqueSansMono Nerd Font
+    family: Iosevka Nerd Font
+    # family: SAGA
+    # family: FantasqueSansMono Nerd Font
     # family: JetBrainsMono Nerd Font
     # family: Victor Mono Nerd Font
     style: Medium Italic
-  size: 20
+  size: 18
 
 window:
   padding:

@@ -147,3 +147,17 @@ scale trough {
   padding-top: 15px;
   padding-left: 3.5px;
 }
+
+.temp {
+  font-family: VictorMono Nerd Font;
+  font-weight: bold;
+  font-size: 1.4em;
+  background-color: $base;
+  color: #f38ba8;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 3px;
+  padding-right: 3px;
+  border-radius: 5px;
+}
