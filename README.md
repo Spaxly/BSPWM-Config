@@ -61,7 +61,15 @@ mv bunnyfetch ~/.local/bin/ # move bunnyfetch to the created directory
 fish_add_path ~/.local/bin/
 ```
 
-It is recommended to reboot after executing the commands above.
+# **NOTE**
+### I have moved the wallpapers to another repo due to its large file size (12gb because they have been upscaled to 4K using <a href="https://github.com/upscayl/upscayl">Upscayl</a>). If you want those wallpapers, run the commands below:
+```
+git clone https://github.com/Spaxly/Wallpapers
+mv Wallpapers/wallpapers/ ~/.config/bspwm/
+feh --bg-fill ~/.config/bspwm/wallpapers/beautiful-mountains-2.png
+```
+
+**It is recommended to reboot after executing the commands above.**
 
 # Features
 * Global theme switcher that changes the theme of the bar, dock, terminal, gtk, etc
@@ -69,6 +77,8 @@ It is recommended to reboot after executing the commands above.
 * Custom dock configured in polybar
 
 * Wallpaper changer script in rofi
+
+* Various modes & themes to choose from
 
 # Credits
 AlphaTechnolog - For EWW bar configuration, taken from https://github.com/AlphaTechnolog/eww-dotfiles and edited to my liking.
