@@ -23,9 +23,9 @@ bspc config border_width         0
 bspc config border_radius        0
 bspc config window_gap          12
 
-# bspc config focused_border_color "#89b4fa"
+bspc config focused_border_color "#89b4fa"
 # bspc config focused_border_color "#a6e3a1"
-bspc config focused_border_color "#1d1d2d"
+# bspc config focused_border_color "#1d1d2d"
 
 bspc config top_padding 0
 bspc config bottom_padding 0

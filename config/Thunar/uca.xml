@@ -3,6 +3,7 @@
 <action>
 	<icon>utilities-terminal</icon>
 	<name>Open Terminal Here</name>
+	<unique-id>1664749848436004-1</unique-id>
 	<command>alacritty --config-file ~/.config/bspwm/alacritty/alacritty.yml --working-directory %f</command>
 	<description>Example for a custom action</description>
 	<patterns>*</patterns>
