@@ -9,7 +9,7 @@ picom --config ~/.config/bspwm/picom/picom.conf --experimental-backends &
 dunst -config ~/.config/bspwm/dunst/dunstrc &
 # ~/.config/bspwm/polybar/alternate_polybar/new_bar/launch.sh &
 ~/.config/bspwm/eww/launch.sh &
-# pkill ewwFullscreenFix.sh; ~/.config/bspwm/scripts/ewwFullscreenFix.sh &
+pkill ewwFullscreenFix.sh; ~/.config/bspwm/scripts/ewwFullscreenFix.sh &
 # ~/.config/bspwm/alternate_polybar/bottom_dock/launch.sh &
 # ~/.config/bspwm/polybar/alternate_polybar/non_floating_bar/launch.sh &
 # ~/.config/bspwm/polybar/launch.sh &

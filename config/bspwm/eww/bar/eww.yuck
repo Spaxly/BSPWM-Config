@@ -33,7 +33,7 @@
 
 (defwidget checkupdates []
   (button :onclick "~/.config/bspwm/eww/bar/scripts/launchUpdates"
-  (label :class "checkupdates" :orientation "v" :text "
+  (label :class "checkupdates" :orientation "v" :halign "center" :valign "end" :text "
  ${checkupdates} 
 PKG"
   (literal :class "checkupdates" :content checkupdates))))
@@ -45,7 +45,7 @@ PKG"
   )))
 
 (defwidget time []
-	(box	:orientation "v" 
+	(box	:orientation "v" :halign "center" 
 			:class "time" 
 			:valign "end"
   (button :onclick "scripts/popup"
