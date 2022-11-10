@@ -1,3 +1,3 @@
 #!/bin/sh
 
-rofi -show drun -theme ~/.config/bspwm/rofi_alternate/config.rasi -yoffset -450 -xoffset -990
+rofi -show drun -theme ~/.config/bspwm/rofi_alternate/config.rasi -yoffset -450 -xoffset -900

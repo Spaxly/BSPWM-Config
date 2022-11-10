@@ -64,7 +64,7 @@
   PKG"
     ))))
 
-(defpoll checkupdates :interval "1s" "scripts/checkupdates")
+(defpoll checkupdates :interval "10s" "scripts/checkupdates")
 
 (defwidget launcher []
   (button :onclick "~/.config/bspwm/eww/bar/scripts/launchMenu"

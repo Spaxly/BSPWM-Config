@@ -1,0 +1,13 @@
+#!/bin/sh
+
+alacritty="$HOME/.config/bspwm/alacritty/colors.yml"
+gtk="$HOME/.config/gtk-3.0/settings.ini"
+gtkrc="$HOME/.gtkrc-2.0"
+xsettingsd="$HOME/.config/xsettingsd/xsettingsd.conf"
+
+sed -i '/colors: */c\colors: *latte' $alacritty
+sed -i '/gtk-theme-name=/c\gtk-theme-name=Catppuccin-Latte' $gtk
+sed -i '/gtk-theme-name=/c\gtk-theme-name=Catppuccin-Latte' $gtkrc
+sed -i '/Net\/ThemeName/c\Net\/ThemeName "Catppuccin-Latte"' $xsettingsd
+
+xsettingsd &

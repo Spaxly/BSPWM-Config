@@ -1,0 +1,19 @@
+@import 'colors/mocha';
+
+* {
+  all: unset; //Unsets everything so you can style everything from scratch
+}
+
+//Global Styles
+.dashboard {
+  background-color: $crust;
+}
+
+.profile {
+  font-family: "FantasqueSansMono Nerd Font";
+  font-size: 2em;
+  color: $blue;
+  background-color: $base;
+  // padding-left: 50px;
+  // padding-right: 50px;
+}
