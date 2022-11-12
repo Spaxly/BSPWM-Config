@@ -1,0 +1,45 @@
+@import 'colors/mocha';
+
+* {
+  all: unset; //Unsets everything so you can style everything from scratch
+}
+
+//Global Styles
+.music-player {
+  background-color: $crust;
+}
+
+.song_title {
+  font-family: "FantasqueSansMono Nerd Font";
+  font-size: 3em;
+  color: $blue;
+  // margin-left: 120px;
+  // background-color: $base;
+  // padding-left: 50px;
+  // padding-right: 50px;
+}
+
+.song_artist {
+  font-family: "FantasqueSansMono Nerd Font";
+  font-size: 1.6em;
+  // margin-bottom: 120px;
+  color: $green;
+}
+
+.next_btn {
+  font-family: "FantasqueSansMono Nerd Font";
+  font-size: 2em;
+  color: $yellow;
+}
+
+.previous_btn {
+  font-family: "FantasqueSansMono Nerd Font";
+  font-size: 2em;
+  color: $yellow;
+}
+
+.toggle_btn {
+  font-family: "FantasqueSansMono Nerd Font";
+  font-size: 2em;
+  color: $yellow;
+}

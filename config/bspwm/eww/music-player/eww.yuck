@@ -1,0 +1,60 @@
+(defwidget music-player []
+  (box :orientation "v"
+    (music)))
+    ; ))
+(defpoll title :interval "1s"  "scripts/music --title")
+(defpoll artist :interval "1s" "scripts/music --artist")
+(defpoll music_icon :interval "1s" "scripts/music --status")
+
+(defwidget music []
+  (box 
+    :orientation "v"  
+    :spacing 20
+    :space-evenly "false"
+    :hexpand "false"
+    :vexpand "false"
+    :valign "center"
+    
+  (label 
+    :class "song_title" 
+    :text "${title}"
+    ; :valign "center"
+    )
+  (label 
+    :class "song_artist" 
+    :text "${artist}"
+    ; :valign "center"
+    )
+  (box
+    :orientation "h"
+    :space-evenly "true"
+    :valign "center"
+    :halign "center"
+    :hexpand "false"
+    :vexpand "false"
+    :spacing 30
+   (button
+    :class "next_btn"
+    :onclick "scripts/music --previous" "ﭢ"
+   )
+   (button
+    :class "toggle_btn"
+    :onclick "playerctl -p spotify play-pause" "${music_icon}"
+    )
+  (button
+    :class "next_btn"
+    :onclick "scripts/music --next" "ﭠ"
+   )
+)))
+
+(defwindow music-player
+  :monitor 0
+  :windowtype "dock"
+  :wm-ignore true
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "30%"
+                      :height "40%"
+                      :anchor "center")
+  :reserve (struts :side "top" :distance "4%")
+  (music-player))

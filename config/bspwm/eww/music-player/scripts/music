@@ -1,0 +1,28 @@
+#!/bin/sh
+
+get_status() {
+  s=$(playerctl status)
+  
+  if [[ $s == "Playing" ]]; then
+    echo " " 
+  else
+    echo "喇"
+  fi
+}
+
+if [[ "$1" == "--title" ]]; then
+  playerctl metadata title
+elif [[ "$1" == "--artist" ]]; then
+  playerctl metadata artist
+elif [[ "$1" == "--previous" ]]; then
+  playerctl previous
+elif [[ "$1" == "--next" ]]; then
+  playerctl next
+elif [[ "$1" == "--status" ]]; then
+  s=$(playerctl status)
+  if [[ $s == "Playing" ]]; then
+    echo "" 
+  else
+    echo "喇"
+  fi
+fi
