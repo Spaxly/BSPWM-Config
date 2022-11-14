@@ -16,6 +16,7 @@ declare -a options=(
   "Partial Zen Mode"
   "Regular Mode"
   "Vertical Bar Mode"
+  "Minimal Mode"
   "Quit"
 )
 
@@ -235,6 +236,7 @@ case $choice in
     sed -i '/~\/.config\/bspwm\/polybar\/launch.sh &/c\# ~\/.config\/bspwm\/polybar\/launch.sh &' $bspwmrc
     sed -i '/~\/.config\/bspwm\/polybar\/alternate_polybar\/launch.sh &/c\# ~\/.config\/bspwm\/polybar\/alternate_polybar\/launch.sh &' $bspwmrc
     sed -i '/~\/.config\/bspwm\/polybar\/alternate_polybar\/non_floating_bar\/launch.sh &/c\# ~\/.config\/bspwm\/polybar\/alternate_polybar\/non_floating_bar\/launch.sh &' $bspwmrc
+    sed -i '/~\/.config\/bspwm\/polybar\/minimal_bar\/launch.sh &/c\# ~\/.config\/bspwm\/polybar\/minimal_bar\/launch.sh &' $bspwmrc
 
     # ---REMOVE PADDING---
     sed -i '/bspc config top_padding/c\bspc config top_padding 0' $bspwmrc
@@ -253,7 +255,7 @@ case $choice in
     sed -i '/~\/.config\/bspwm\/eww\/launch.sh &/c\# ~\/.config\/bspwm\/eww\/launch.sh &' $bspwmrc
 
     # ---BACKGROUND---
-    echo 'feh --bg-fill ~/.config/bspwm/wallpapers/blossom_upscayled_4x.png' > ~/.fehbg
+    echo 'feh --bg-fill ~/.config/bspwm/wallpapers/blue-mountains.png' > ~/.fehbg
 
     # ---BSPWM---
     bspc wm -r
@@ -284,7 +286,7 @@ case $choice in
     sed -i '/bspc config border_width/c\bspc config border_width 0' $bspwmrc
     
     # ---BACKGROUND---
-    echo 'feh --bg-fill ~/.config/bspwm/wallpapers/blossom_upscayled_4x.png' > ~/.fehbg
+    echo 'feh --bg-fill ~/.config/bspwm/wallpapers/sunset-in-the-mountains-illustration_3840x2160_xtrafondos.png' > ~/.fehbg
     # ---BSPWM---
     bspc wm -r
     ;;
@@ -302,6 +304,7 @@ case $choice in
     sed -i '/~\/.config\/bspwm\/polybar\/launch.sh &/c\~\/.config\/bspwm\/polybar\/launch.sh &' $bspwmrc
     # sed -i '/# ~\/.config\/bspwm\/polybar\/alternate_polybar\/launch.sh &/c\~\/.config\/bspwm\/polybar\/alternate_polybar\/launch.sh &' $bspwmrc
     sed -i '/~\/.config\/bspwm\/polybar\/alternate_polybar\/non_floating_bar\/launch.sh &/c\# ~\/.config\/bspwm\/polybar\/alternate_polybar\/non_floating_bar\/launch.sh &' $bspwmrc
+    sed -i '/~\/.config\/bspwm\/polybar\/minimal_bar\/launch.sh &/c\# ~\/.config\/bspwm\/polybar\/minimal_bar\/launch.sh &' $bspwmrc
 
     # ---ADD PADDING---
     sed -i '/bspc config top_padding/c\bspc config top_padding 70' $bspwmrc
@@ -309,11 +312,11 @@ case $choice in
     sed -i '/bspc config left_padding/c\bspc config left_padding 0' $bspwmrc
     sed -i '/bspc config right_padding/c\bspc config right_padding 0' $bspwmrc
 
-    # ---ADD BORDER---
-    sed -i '/bspc config border_width/c\bspc config border_width 5' $bspwmrc
+    # ---REMOVE BORDER---
+    sed -i '/bspc config border_width/c\bspc config border_width 0' $bspwmrc
 
     # ---BACKGROUND---
-    echo 'feh --bg-fill ~/.config/bspwm/wallpapers/wave.png' > ~/.fehbg
+    echo 'feh --bg-fill ~/.config/bspwm/wallpapers/beautiful-mountains-2.png' > ~/.fehbg
 
     # ---BSPWM---
     bspc wm -r
@@ -330,6 +333,7 @@ case $choice in
     sed -i '/~\/.config\/bspwm\/polybar\/launch.sh &/c\# ~\/.config\/bspwm\/polybar\/launch.sh &' $bspwmrc
     sed -i '/~\/.config\/bspwm\/polybar\/alternate_polybar\/launch.sh &/c\# ~\/.config\/bspwm\/polybar\/alternate_polybar\/launch.sh &' $bspwmrc
     sed -i '/~\/.config\/bspwm\/polybar\/alternate_polybar\/non_floating_bar\/launch.sh &/c\# ~\/.config\/bspwm\/polybar\/alternate_polybar\/non_floating_bar\/launch.sh &' $bspwmrc
+    sed -i '/~\/.config\/bspwm\/polybar\/minimal_bar\/launch.sh &/c\# ~\/.config\/bspwm\/polybar\/minimal_bar\/launch.sh &' $bspwmrc
 
     # ---ENABLE EWW---
     sed -i '/~\/.config\/bspwm\/eww\/launch.sh &/c\~/\.config\/bspwm\/eww\/launch.sh &' $bspwmrc
@@ -343,6 +347,23 @@ case $choice in
     # ---BACKGROUND---
     echo 'feh --bg-fill ~/.config/bspwm/wallpapers/cat.jpg' > ~/.fehbg
 
+    # ---BSPWM---
+    bspc wm -r
+    ;;
+  'Minimal Mode')
+    # ---DISABLE POLYBAR---
+    sed -i '/~\/.config\/bspwm\/polybar\/alternate_polybar\/bottom_dock\/launch.sh &/c\# ~\/.config\/bspwm\/alternate_polybar\/bottom_dock\/launch.sh &' $bspwmrc
+    sed -i '/~\/.config\/bspwm\/polybar\/launch.sh &/c\# ~\/.config\/bspwm\/polybar\/launch.sh &' $bspwmrc
+    sed -i '/~\/.config\/bspwm\/polybar\/alternate_polybar\/launch.sh &/c\# ~\/.config\/bspwm\/polybar\/alternate_polybar\/launch.sh &' $bspwmrc
+    sed -i '/~\/.config\/bspwm\/polybar\/alternate_polybar\/non_floating_bar\/launch.sh &/c\# ~\/.config\/bspwm\/polybar\/alternate_polybar\/non_floating_bar\/launch.sh &' $bspwmrc
+    sed -i '/~\/.config\/bspwm\/polybar\/minimal_bar\/launch.sh &/c\~\/.config\/bspwm\/polybar\/minimal_bar\/launch.sh &' $bspwmrc
+    # ---ADD PADDING---
+    sed -i '/bspc config top_padding/c\bspc config top_padding 50' $bspwmrc
+    sed -i '/bspc config bottom_padding/c\bspc config bottom_padding 0' $bspwmrc
+    sed -i '/bspc config left_padding/c\bspc config left_padding 0' $bspwmrc
+    sed -i '/bspc config right_padding/c\bspc config right_padding 0' $bspwmrc
+    # ---BACKGROUND---
+    echo 'feh --bg-fill ~/.config/bspwm/wallpapers/neon.png'
     # ---BSPWM---
     bspc wm -r
     ;;

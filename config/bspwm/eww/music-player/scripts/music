@@ -1,17 +1,12 @@
 #!/bin/sh
 
-get_status() {
-  s=$(playerctl status)
-  
-  if [[ $s == "Playing" ]]; then
-    echo " " 
-  else
-    echo "喇"
-  fi
-}
-
 if [[ "$1" == "--title" ]]; then
-  playerctl metadata title
+  s=$(playerctl status)
+  if [[ $s == "" ]]; then
+    echo "Not Playing"
+  else
+    playerctl metadata title
+  fi
 elif [[ "$1" == "--artist" ]]; then
   playerctl metadata artist
 elif [[ "$1" == "--previous" ]]; then
@@ -24,5 +19,13 @@ elif [[ "$1" == "--status" ]]; then
     echo "" 
   else
     echo "喇"
+  fi
+elif [[ "$1" == "--cover" ]]; then
+  s=$(playerctl status)
+  if [[ $s == "Playing" ]]; then
+    c=$(playerctl metadata mpris:artUrl)
+    echo "$c"
+  else
+    echo "Not Playing"
   fi
 fi
