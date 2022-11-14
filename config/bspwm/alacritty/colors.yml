@@ -407,4 +407,4 @@ color_schemes:
       cyan:    '#74bee9'
       white:   '#dee1e6'
 
-colors: *decayce
+colors: *mocha

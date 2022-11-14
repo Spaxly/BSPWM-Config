@@ -15,14 +15,22 @@
     :hexpand "false"
     :vexpand "false"
     :valign "center"
-  (box
-    :class "cover_art"
-    :vexpand "false"
-    :hexpand "false"
-    :width 500
-    :height 500
-    :style "background-image: url('${music_art}');"
-   )
+  ; (box
+    ; :class "cover_art"
+    ; :vexpand "false"
+    ; :hexpand "false"
+    ; :space-evenly "true"
+    ; :spacing 20
+    ; :valign "center"
+    ; :style "background-image: url('${music_art}');"
+   ; )
+  (box 
+    :class "cover_art" 
+    :width 300
+    :height 300
+    :style "background-image: url('${music_art}')" 
+    :tooltip "Cover"
+  )
   (label 
     :class "song_title" 
     :text "${title}"
