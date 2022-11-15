@@ -20,7 +20,7 @@ declare -a options=(
   "Quit"
 )
 
-choice=$(printf '%s\n' "${options[@]}" | rofi -dmenu -i -l 16 -p 'Change Global Theme:' -theme ~/.config/bspwm/rofi/config/launcher.rasi)
+choice=$(printf '%s\n' "${options[@]}" | rofi -dmenu -i -l 16 -p 'Change Global Theme:' -theme ~/.config/bspwm/rofi/config/style-1.rasi)
 polybar="$HOME/.config/bspwm/polybar/config.ini"
 dock="$HOME/.config/bspwm/bottom_dock/config.ini"
 alacritty="$HOME/.config/bspwm/alacritty/colors.yml"
@@ -130,9 +130,9 @@ case $choice in
     # ---ALACRITTY---
     sed -i '/colors: */c\colors: *mocha' $alacritty
     # ---CONKY---
-    sed -i '/.config\/conky/c\~\/.config\/conky\/Mimosa-Dark\/start.sh &' $bspwmrc 
+    sed -i '/.config\/conky/c\~\/.config\/conky\/Regulus-Light\/start.sh &' $bspwmrc 
     # ---BACKGROUND---
-    echo 'feh --bg-fill ~/.config/bspwm/wallpapers/aether-dark.png' > ~/.fehbg
+    echo 'feh --bg-fill ~/.config/bspwm/wallpapers/pinksky4k.png' > ~/.fehbg
     # ---BSPWM---
     bspc wm -r
     ;;
@@ -351,12 +351,15 @@ case $choice in
     bspc wm -r
     ;;
   'Minimal Mode')
+    killall eww
     # ---DISABLE POLYBAR---
     sed -i '/~\/.config\/bspwm\/polybar\/alternate_polybar\/bottom_dock\/launch.sh &/c\# ~\/.config\/bspwm\/alternate_polybar\/bottom_dock\/launch.sh &' $bspwmrc
     sed -i '/~\/.config\/bspwm\/polybar\/launch.sh &/c\# ~\/.config\/bspwm\/polybar\/launch.sh &' $bspwmrc
     sed -i '/~\/.config\/bspwm\/polybar\/alternate_polybar\/launch.sh &/c\# ~\/.config\/bspwm\/polybar\/alternate_polybar\/launch.sh &' $bspwmrc
     sed -i '/~\/.config\/bspwm\/polybar\/alternate_polybar\/non_floating_bar\/launch.sh &/c\# ~\/.config\/bspwm\/polybar\/alternate_polybar\/non_floating_bar\/launch.sh &' $bspwmrc
     sed -i '/~\/.config\/bspwm\/polybar\/minimal_bar\/launch.sh &/c\~\/.config\/bspwm\/polybar\/minimal_bar\/launch.sh &' $bspwmrc
+    sed -i '/~\/.config\/bspwm\/eww\/launch.sh &/c\# ~\/.config\/bspwm\/eww\/launch.sh &' $bspwmrc
+
     # ---ADD PADDING---
     sed -i '/bspc config top_padding/c\bspc config top_padding 50' $bspwmrc
     sed -i '/bspc config bottom_padding/c\bspc config bottom_padding 0' $bspwmrc
