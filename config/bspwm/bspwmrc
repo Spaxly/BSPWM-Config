@@ -11,12 +11,12 @@ dunst -config ~/.config/bspwm/dunst/dunstrc &
 # ~/.config/bspwm/polybar/alternate_polybar/new_bar/launch.sh &
 # ~/.config/bspwm/eww/launch.sh &
 pkill ewwFullscreenFix.sh; ~/.config/bspwm/scripts/ewwFullscreenFix.sh &
-~/.config/bspwm/polybar/alternate_polybar/bottom_dock/launch.sh &
-# ~/.config/bspwm/polybar/alternate_polybar/non_floating_bar/launch.sh &
-~/.config/bspwm/polybar/launch.sh &
+# ~/.config/bspwm/alternate_polybar/bottom_dock/launch.sh &
+~/.config/bspwm/polybar/alternate_polybar/non_floating_bar/launch.sh &
+# ~/.config/bspwm/polybar/launch.sh &
 # ~/.config/bspwm/polybar/alternate_polybar/launch.sh &
 # ~/.config/bspwm/polybar/minimal_bar/launch.sh &
-~/.config/conky/Mimosa-Dark/start.sh &
+~/.config/conky/Regulus-Light/start.sh &
 glava --desktop &
 ~/.fehbg &
 
@@ -30,7 +30,7 @@ bspc config window_gap          12
 # bspc config focused_border_color "#a6e3a1"
 # bspc config focused_border_color "#1d1d2d"
 
-bspc config top_padding 70
-bspc config bottom_padding 90
+bspc config top_padding 0
+bspc config bottom_padding 80
 bspc config left_padding 0
 bspc config right_padding 0
